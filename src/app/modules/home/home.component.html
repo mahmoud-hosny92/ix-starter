@@ -1,0 +1,45 @@
+<div style="max-height: 100% !important; overflow-y: scroll !important">
+  <ix-button (click)="openDialog()"> Open dialog </ix-button>
+  <ng-container *ngFor="let item of [1, 2, 3]; let i = index">
+    <ix-blind label="Example">
+      <ix-icon-button
+        id="custom-context-menu"
+        slot="header-actions"
+        ghost
+        icon="context-menu"
+      ></ix-icon-button>
+      <ix-dropdown trigger="custom-context-menu" style="width: 10rem"
+        ><ix-dropdown-header
+          label="Category"
+          positioningStrategy="absolute"
+        ></ix-dropdown-header>
+        <ix-dropdown-item label="Item 2"></ix-dropdown-item>
+        <ix-dropdown-item label="Item 3"></ix-dropdown-item>
+        <ix-dropdown-item label="Item 4"></ix-dropdown-item>
+        <ix-divider></ix-divider>
+        <ix-dropdown-item label="Item 5"></ix-dropdown-item
+      ></ix-dropdown>
+      <ix-tile size="medium">
+        <div
+          class="d-flex flex-grow-1 align-items-center justify-content-between"
+          slot="header"
+        >
+          Tile header
+          <ix-icon-button ghost icon="context-menu"></ix-icon-button>
+        </div>
+        <div slot="subheader">Temperature</div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            align-items: flex-end;
+            justify-content: space-between;
+          "
+        >
+          <span>92.8 °C</span>
+        </div>
+      </ix-tile>
+    </ix-blind>
+  </ng-container>
+</div>

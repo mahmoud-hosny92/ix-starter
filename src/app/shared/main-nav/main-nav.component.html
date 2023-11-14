@@ -1,0 +1,44 @@
+<ix-map-navigation
+  applicationName="Siemens DISW Analytics"
+  navigationTitle="Collections"
+>
+  <div class="placeholder-logo" slot="logo"></div>
+  <ix-menu enableToggleTheme="true">
+    <ix-menu-item>Item 1</ix-menu-item>
+    <ix-menu-item>Item 2</ix-menu-item>
+    <ix-menu-avatar initials="MH">Avatar</ix-menu-avatar>
+  </ix-menu>
+  <div slot="sidebar-content">
+    <div
+      class="d-flex flex-grow-1 align-items-center justify-content-between"
+      style="padding: 0.5rem"
+    >
+      <ix-link-button disabled>Standard</ix-link-button>
+      <div class="actions">
+        <ix-icon-button ghost icon="pen"></ix-icon-button>
+        <ix-icon-button ghost icon="trashcan"></ix-icon-button>
+      </div>
+    </div>
+    <div
+      *ngFor="let item of [1, 2, 3, 4]; let i = index"
+      style="padding: 0.5rem"
+    >
+      <ix-tile
+        size="small"
+        style="
+          max-width: 100% !important;
+          width: -webkit-fill-available !important;
+        "
+      >
+        <div
+          class="d-flex flex-grow-1 align-items-center justify-content-between"
+          slot="header"
+        >
+          Tile header
+          <ix-icon-button ghost icon="context-menu"></ix-icon-button>
+        </div>
+      </ix-tile>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</ix-map-navigation>
